@@ -18,10 +18,17 @@ const ImageRows = styled.div`
 `;
 const ImageRow = styled.div`
     display: flex;
-    flex-direction: column;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    flex-direction: row;
+    padding-top: 20px;
+    padding-bottom: 20px;
 `;
+const InputImage = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+const Output = styled.h3`
+    margin: auto 10%;
+`
 
 const imageRowsState = selector({
     key: 'imageRows',
@@ -39,12 +46,20 @@ const ImageTable = () => {
     console.log(imageRows)
     return (
         <div>
+            <h2 style={{marginTop: "15px"}}>
+                Camouflage clothes VS Normal clothes classification
+            </h2>
             <DropArea></DropArea>
             <ImageRows>
                 {imageRows.map((imageRow) => (
                     <ImageRow>
-                        <img style={imageStyle} src={imageRow[0]} />
-                        <div>{imageRow[1]}</div>
+                        <InputImage>
+                            <img style={imageStyle} src={imageRow[0]} />
+                            <div>{imageRow[1]}</div>
+                        </InputImage>
+                        <Output>
+                        Camouflage clothes
+                        </Output>
                     </ImageRow>
                 ))}
             </ImageRows>

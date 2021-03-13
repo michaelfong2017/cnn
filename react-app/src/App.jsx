@@ -36,7 +36,7 @@ const MyApp = () => {
         <Navbar />
       </Suspense>
 
-      <Container fluid>
+      <Container>
         <Suspense fallback={
           <Spinner animation="border" role="status">
             <span className="sr-only">Loading...</span>
