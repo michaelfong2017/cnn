@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react"; 
+import React, { useEffect } from "react";
 import {
     useRecoilValue,
     selector,
@@ -7,12 +7,6 @@ import {
 import { imagesAtom, filenamesAtom } from "components/DropArea"
 import styled from "styled-components"
 import DropArea from "components/DropArea"
-
-import {
-    Spinner,
-  } from "react-bootstrap"
-
-import ImageClassifier from "components/ImageClassifier"
 
 const imageStyle = {
     width: 300,
@@ -48,11 +42,10 @@ const imageRowsState = selector({
     },
 });
 
-ImageClassifier()
-
 const ImageTable = () => {
     const imageRows = useRecoilValue(imageRowsState)
     console.log(imageRows)
+
     return (
         <div>
             <h2 style={{ marginTop: "15px" }}>
@@ -72,7 +65,7 @@ const ImageTable = () => {
                     </ImageRow>
                 ))}
             </ImageRows>
-        </div>
+        </div >
     );
 }
 

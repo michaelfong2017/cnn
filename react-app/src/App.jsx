@@ -14,6 +14,7 @@ import "styles/app.scss";
 
 const Navbar = lazy(() => import("components/Navbar"));
 const ImageTable = lazy(() => import("components/ImageTable"));
+const ImageClassifier = lazy(() => import("components/ImageClassifier"));
 
 const App = () => {
   return (
@@ -43,6 +44,11 @@ const MyApp = () => {
           </Spinner>}>
           <ImageTable></ImageTable>
         </Suspense>
+        <Suspense fallback={
+                <span className="sr-only">Loading model...</span>
+            }>
+                <ImageClassifier />
+            </Suspense>
       </Container>
       
     </div>

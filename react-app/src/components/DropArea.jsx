@@ -130,7 +130,7 @@ const DropArea = () => {
       div.removeEventListener("dragover", onDragOver);
       div.removeEventListener("drop", onDrop);
     };
-  }, [container.current]);
+  }, []);
 
   return (
     <div>
