@@ -48,10 +48,11 @@ const imageRowsState = selector({
     },
 });
 
+ImageClassifier()
+
 const ImageTable = () => {
     const imageRows = useRecoilValue(imageRowsState)
     console.log(imageRows)
-    ImageClassifier()
     return (
         <div>
             <h2 style={{ marginTop: "15px" }}>
