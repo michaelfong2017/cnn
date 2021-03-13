@@ -3,16 +3,21 @@ import {
   useRecoilState,
   atom
 } from "recoil";
+import styled from "styled-components"
 
-const width = 300;
-const height = 300;
+const width = "300px";
+const height = "300px";
 const borderStyle = "2px dotted #000";
 
-const dropAreaStyle = {
-  width: width,
-  height: height,
-  border: borderStyle,
-};
+const DragBox = styled.div`
+  width: ${width};
+  height: ${height};
+  border: ${borderStyle};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+`
 
 const imagesAtom = atom({
   key: 'images',
@@ -130,9 +135,9 @@ const DropArea = () => {
   return (
     <div>
       {err && <p>{err}</p>}
-      <div style={dropAreaStyle} ref={container}>
-
-      </div>
+      <DragBox ref={container}>
+        Drag images here
+      </DragBox>
       <div className="button-wrapper">
         {images && <button onClick={() => {
           setImages([])

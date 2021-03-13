@@ -1,4 +1,5 @@
-import React, { lazy, Suspense } from "react"; import {
+import React, { lazy, Suspense } from "react"; 
+import {
     useRecoilValue,
     selector,
 } from "recoil";
@@ -6,6 +7,12 @@ import React, { lazy, Suspense } from "react"; import {
 import { imagesAtom, filenamesAtom } from "components/DropArea"
 import styled from "styled-components"
 import DropArea from "components/DropArea"
+
+import {
+    Spinner,
+  } from "react-bootstrap"
+
+import ImageClassifier from "components/ImageClassifier"
 
 const imageStyle = {
     width: 300,
@@ -44,9 +51,10 @@ const imageRowsState = selector({
 const ImageTable = () => {
     const imageRows = useRecoilValue(imageRowsState)
     console.log(imageRows)
+    ImageClassifier()
     return (
         <div>
-            <h2 style={{marginTop: "15px"}}>
+            <h2 style={{ marginTop: "15px" }}>
                 Camouflage clothes VS Normal clothes classification
             </h2>
             <DropArea></DropArea>
@@ -58,7 +66,7 @@ const ImageTable = () => {
                             <div>{imageRow[1]}</div>
                         </InputImage>
                         <Output>
-                        Camouflage clothes
+                            Camouflage clothes
                         </Output>
                     </ImageRow>
                 ))}
