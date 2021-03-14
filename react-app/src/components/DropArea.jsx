@@ -5,6 +5,10 @@ import {
 } from "recoil";
 import styled from "styled-components"
 
+import sample1 from "images/classification/Sample 1.jpeg"
+import sample2 from "images/classification/Sample 2.jpeg"
+import sample3 from "images/classification/Sample 3.jpeg"
+
 const width = "300px";
 const height = "300px";
 const borderStyle = "2px dotted #000";
@@ -23,11 +27,11 @@ const maxImageNumber = 8
 
 const imagesAtom = atom({
   key: 'images',
-  default: []
+  default: [sample1, sample2, sample3]
 })
 const filenamesAtom = atom({
   key: 'filenames',
-  default: []
+  default: ["Sample 1.jpeg", "Sample 2.jpeg", "Sample 3.jpeg"]
 })
 
 const DropArea = () => {
@@ -156,7 +160,7 @@ const DropArea = () => {
           setFilenames([])
         }}>Remove All</button>}
       </div>
-      <h5 style={{marginTop: "15px"}}>Maximum {maxImageNumber} images</h5>
+      <h5 style={{ marginTop: "15px" }}>Maximum {maxImageNumber} images</h5>
     </div>
   );
 };

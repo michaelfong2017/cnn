@@ -55,7 +55,7 @@ module.exports = {
             use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'] // Note that postcss loader must come before sass-loader
          },
          {
-            test: /\.(svg|png|jpg|gif|ttf)$/,
+            test: /\.(svg|png|jpg|jpeg|gif|ttf)$/,
             use: 'file-loader',
          }
       ]

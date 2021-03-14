@@ -5,6 +5,8 @@ import {
 } from "recoil";
 
 import { imagesAtom, filenamesAtom } from "components/DropArea"
+import { predictionsAtom } from "components/ImageClassifier"
+
 import styled from "styled-components"
 import DropArea from "components/DropArea"
 
@@ -13,22 +15,23 @@ const imageStyle = {
     height: 300,
 };
 
-const ImageRows = styled.div`
-    display: flex;
-    flex-direction: column-reverse;
-`;
 const ImageRow = styled.div`
     display: flex;
     flex-direction: row;
-    padding-top: 20px;
-    padding-bottom: 20px;
+`;
+const ImageColumn = styled.div`
+    display: flex;
+    flex-direction: column-reverse;
 `;
 const InputImage = styled.div`
     display: flex;
     flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
 `
 const Output = styled.h3`
     margin: auto 10%;
+    white-space: pre-line;
 `
 
 const imageRowsState = selector({
@@ -44,6 +47,7 @@ const imageRowsState = selector({
 
 const ImageTable = () => {
     const imageRows = useRecoilValue(imageRowsState)
+    const predictions = useRecoilValue(predictionsAtom)
     console.log(imageRows)
 
     return (
@@ -52,19 +56,31 @@ const ImageTable = () => {
                 Camouflage clothes VS Normal clothes classification
             </h2>
             <DropArea></DropArea>
-            <ImageRows>
-                {imageRows.map((imageRow, i) => (
-                    <ImageRow key={i}>
-                        <InputImage>
+
+            <ImageRow>
+                <ImageColumn>
+                    {imageRows.map((imageRow, i) => (
+                        <InputImage key={i}>
                             <img style={imageStyle} src={imageRow[0]} />
                             <div>{imageRow[1]}</div>
                         </InputImage>
-                        <Output>
-                            Camouflage clothes
+                    ))}
+                </ImageColumn>
+                <ImageColumn>
+                    {predictions.map((prediction, i) => (
+                        <Output key={i}>
+                            <div style={{fontSize: "15px"}}>
+                                {"Probability of camouflage clothes: " + prediction[0] + "\n\n"
+                                    + "Probability of normal clothes: " + prediction[1] + "\n\n"}
+                            </div>
+                            <div style={{ color: "#6232a8" }}>
+                                {prediction[0] > prediction[1] ? "Camouflage clothes" : "Normal clothes"}
+                            </div>
                         </Output>
-                    </ImageRow>
-                ))}
-            </ImageRows>
+                    ))}
+                </ImageColumn>
+            </ImageRow>
+
         </div >
     );
 }

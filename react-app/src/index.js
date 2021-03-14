@@ -7,3 +7,6 @@ if (process.env.NODE_ENV !== 'production') {
         module.hot.accept()
     }
 }
+else {
+    console.log = function() {}
+}
