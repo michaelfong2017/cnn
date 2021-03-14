@@ -20,6 +20,7 @@ const loadImageUrl = async (url) => {
     return new Promise((resolve, reject) => {
         const im = new Image()
         im.src = url
+        im.crossOrigin = 'anonymous'
         im.onload = () => {
             resolve(im)
         }

@@ -21,6 +21,7 @@ const DragBox = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  white-space: pre-line;
 `
 
 const maxImageNumber = 8
@@ -66,14 +67,47 @@ const DropArea = () => {
     return results;
   }
 
+  const loadImageUrl = async (url) => {
+    return new Promise((resolve, reject) => {
+      const im = new Image()
+      im.src = url
+      im.crossOrigin = 'anonymous'
+      im.onload = () => {
+        resolve(im)
 
+        setImages(images => {
+          let length = images.length + 1
+          return [...images, url].slice(Math.max(length - maxImageNumber, 0))
+        });
+        setErr("")
+      }
+      im.onerror = () => {
+        console.log("onerror")
+        reject(im)
+
+        setErr("File format must be either png or jpg, not hyperlink or else!");
+      }
+    })
+  }
+
+  /* Input by drag and drop */
 
   const onDrop = (e) => {
     e.preventDefault();
+
+    const imageUrl = e.dataTransfer.getData('url')
     const {
       dataTransfer: { files },
     } = e;
-    console.log("Files: ", files);
+
+    console.log("imageUrl: ", imageUrl)
+    console.log("files: ", files);
+
+    /* If user is dragging online image from another window, directly process and return */
+    if (imageUrl !== null) {
+      loadImageUrl(imageUrl)
+    }
+
     const { length } = files;
 
     if (length === 0) {
@@ -124,6 +158,16 @@ const DropArea = () => {
     e.preventDefault();
   };
 
+  /* Input by input URL */
+  const [inputUrl, setInputUrl] = useState('')
+  const handleChangeUrl = (e) => {
+    setInputUrl(e.target.value)
+  }
+  const handleSubmitUrl = (e) => {
+    e.preventDefault()
+    loadImageUrl(inputUrl)
+  }
+
   useEffect(() => {
     console.log("DropArea useEffect is called");
 
@@ -152,15 +196,22 @@ const DropArea = () => {
     <div>
       {err && <p>{err}</p>}
       <DragBox ref={container}>
-        Drag images here
+        {"Drag images here (from local\n\nfilesystem or browser window)"}
       </DragBox>
-      <div className="button-wrapper">
+      <form onSubmit={handleSubmitUrl}>
+        <label style={{whiteSpace: "pre"}}>
+          {"Image URL:  "}
+          <input type="text" value={inputUrl} onChange={handleChangeUrl} />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+      <div className="button-wrapper" style={{ marginTop: "15px" }}>
         {images && <button onClick={() => {
           setImages([])
           setFilenames([])
         }}>Remove All</button>}
       </div>
-      <h5 style={{ marginTop: "15px" }}>Maximum {maxImageNumber} images</h5>
+      <h5 style={{ marginTop: "20px" }}>Maximum {maxImageNumber} images</h5>
     </div>
   );
 };
