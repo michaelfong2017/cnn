@@ -53,8 +53,8 @@ const ImageTable = () => {
             </h2>
             <DropArea></DropArea>
             <ImageRows>
-                {imageRows.map((imageRow) => (
-                    <ImageRow>
+                {imageRows.map((imageRow, i) => (
+                    <ImageRow key={i}>
                         <InputImage>
                             <img style={imageStyle} src={imageRow[0]} />
                             <div>{imageRow[1]}</div>

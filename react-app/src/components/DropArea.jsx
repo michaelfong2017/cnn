@@ -124,12 +124,17 @@ const DropArea = () => {
       div.addEventListener("drop", onDrop);
     }
     return () => {
-      let div = container.current;
-      div.removeEventListener("dragenter", onDragEnter);
-      div.removeEventListener("dragleave", onDragLeave);
-      div.removeEventListener("dragover", onDragOver);
-      div.removeEventListener("drop", onDrop);
+      /* This if condition prevents null error, it needs to be inside "return". */
+      if (container.current) {
+        let div = container.current;
+        div.removeEventListener("dragenter", onDragEnter);
+        div.removeEventListener("dragleave", onDragLeave);
+        div.removeEventListener("dragover", onDragOver);
+        div.removeEventListener("drop", onDrop);
+      }
     };
+    /* Usually it is good to include "container.current" in the dependency array, this time it is also
+    good to not include it so that useEffect is only executed once at the beginning instead of twice. */
   }, []);
 
   return (
