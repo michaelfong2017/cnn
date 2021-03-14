@@ -19,6 +19,8 @@ const DragBox = styled.div`
   font-size: 20px;
 `
 
+const maxImageNumber = 8
+
 const imagesAtom = atom({
   key: 'images',
   default: []
@@ -51,7 +53,10 @@ const DropArea = () => {
   const readAllFiles = async (AllFiles) => {
     const results = await Promise.all(AllFiles.map(async (file) => {
       const fileContents = await handleFileChosen(file);
-      setImages(images => [...images, fileContents]);
+      setImages(images => {
+        let length = images.length + 1
+        return [...images, fileContents].slice(Math.max(length - maxImageNumber, 0))
+      });
       return fileContents;
     }));
     return results;
@@ -97,8 +102,10 @@ const DropArea = () => {
       if (!files[i].name) return;
       newFilenames.push(files[i].name);
     }
-    setFilenames(filenames => [...filenames, ...newFilenames]);
-    console.log([...filenames, ...newFilenames])
+    setFilenames(filenames => {
+      let length = filenames.length + newFilenames.length
+      return [...filenames, ...newFilenames].slice(Math.max(length - maxImageNumber, 0))
+    });
   };
   const onDragEnter = (e) => {
     console.log("onDragEnter");
@@ -149,6 +156,7 @@ const DropArea = () => {
           setFilenames([])
         }}>Remove All</button>}
       </div>
+      <h5 style={{marginTop: "15px"}}>Maximum {maxImageNumber} images</h5>
     </div>
   );
 };
