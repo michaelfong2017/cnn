@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.15)  16 MAR 2021 22:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.15)  17 MAR 2021 00:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -271,7 +271,7 @@ Package pdftex.def Info: screenshot.png  used on input line 66.
 [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./scree
-nshot.png>]
+nshot.png>] [2]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 101.
 
 Overfull \hbox (122.70418pt too wide) in paragraph at lines 97--101
@@ -292,7 +292,7 @@ Overfull \hbox (15.43098pt too wide) in paragraph at lines 97--101
  https://arxiv.org/pdf/1406.2952.pdf 
  []
 
-[2] [3]
+[3]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 101.
  (./proposal.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 101.
@@ -304,7 +304,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 101.
 Here is how much of TeX's memory you used:
  5373 strings out of 480608
  83354 string characters out of 5903630
- 345790 words of memory out of 5000000
+ 345894 words of memory out of 5000000
  21181 multiletter control sequences out of 15000+600000
  534459 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -312,7 +312,7 @@ Here is how much of TeX's memory you used:
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on proposal.pdf (3 pages, 430315 bytes).
+Output written on proposal.pdf (3 pages, 431024 bytes).
 PDF statistics:
  50 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream

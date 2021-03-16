@@ -78,7 +78,7 @@ There are two approaches to transfer learning. They are feature extraction and f
 Feature extraction in transfer learning is the process of using pre-trained network as a feature extractor to extract feature vectors and then feeding these feature vectors together with optional labels to a machine learning algorithm for training. Fine-tuning in transfer learning is the process of re-training the CNN in which at least some of the parameters are added or changed. It has been demonstrated that fine-tuning can boost the task accuracy when the dataset is small and different from the pre-trained model’s dataset [4]. Intuitively, since the dataset is small, it must rely on the pre-trained model to learn more basic geometric shapes. When the dataset is different from the pre-trained model's dataset, for example, knowing whether an object is a clothes is not directly helpful for differentiating clothes of different styles without adding more knowledge on top of the previous visual cognition.
 
 \subsection*{2.3 \hspace{10pt} Data Augmentation}
-
+Data augmentation is a process of applying random transformations, such as flipping, shifting, rotation, zooming, changing brightness and changing colours, to increase the diversity of training data to reduce overfitting. Indeed, the original batch is replaced by the new randomly transformed batch. As real-world data can have great variance in terms of transformation, training data need to capture them. Since it is difficult and expensive to obtain training data under a comprehensive set of transformations, data augmentation allows the training data to generalize better and easier.
 
 \section*{\large{3 \hspace{10pt} Implementations}}
 hello
