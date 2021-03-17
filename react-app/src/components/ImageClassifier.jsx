@@ -55,6 +55,7 @@ const ImageClassifier = () => {
         if (model) {
             console.log("Time: " + Date.now())
             predict(images)
+            console.log(tf.getBackend())
         }
         else {
             loadModel().then(() => {
