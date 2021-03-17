@@ -47,11 +47,13 @@ const ImageClassifier = () => {
             return prediction
         })).then((values) => {
             setPredictions(values)
+            console.log("Time: " + Date.now())
         })
     }
 
     useEffect(() => {
         if (model) {
+            console.log("Time: " + Date.now())
             predict(images)
         }
         else {
