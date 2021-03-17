@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.15)  17 MAR 2021 13:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.15)  17 MAR 2021 16:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -9,8 +9,8 @@ LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-03-06>
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-(/usr/local/texlive/2020/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count167
 \c@section=\count168
@@ -267,60 +267,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--64
 File: screenshot.png Graphic file (type png)
 <use screenshot.png>
 Package pdftex.def Info: screenshot.png  used on input line 66.
-(pdftex.def)             Requested size: 303.53708pt x 322.07455pt.
+(pdftex.def)             Requested size: 252.94499pt x 268.38232pt.
 [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./scree
 nshot.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 84--87
+Underfull \hbox (badness 10000) in paragraph at lines 86--89
 
  []
 
 [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 104.
+Underfull \hbox (badness 10000) in paragraph at lines 91--94
 
-Overfull \hbox (122.70418pt too wide) in paragraph at lines 99--104
-\OT1/cmr/m/n/12 [1] https://ijcsit.com/docs/Volume%207/vol7issue5/ijcsit2016070
-5014.pdf [2] https://openreview.net/pdf?id=ryxyCeHtPB
  []
 
 
-Overfull \hbox (403.17747pt too wide) in paragraph at lines 99--104
-\OT1/cmr/m/n/12 [3] https://www.researchgate.net/profile/Jordan-Bird/publicatio
-n/325803364[]A[]Study[]on[]CNN[]Transfer[]Learning[]for[]Image[]Classification/
-links/5bd8874b92851c6b279a23ea/A-
+Overfull \hbox (344.0257pt too wide) in paragraph at lines 100--103
+\OT1/cmr/m/n/10.95 [3] []https://www.researchgate.net/profile/Jordan-Bird/publi
+cation/ 325803364[]A[]Study[]on[]CNN[]Transfer[]Learning[]for[]Image[]Classific
+ation/links/5bd8874b92851c6b279a23ea/A-
  []
 
 
-Overfull \hbox (15.43098pt too wide) in paragraph at lines 99--104
-\OT1/cmr/m/n/12 Study-on-CNN-Transfer-Learning-for-Image-Classification.pdf [4]
- https://arxiv.org/pdf/1406.2952.pdf
+Overfull \hbox (15.99374pt too wide) in paragraph at lines 110--111
+\OT1/cmr/m/n/10.95 [7] []https://openaccess.thecvf.com/content[]cvpr[]2016/pape
+rs/Redmon[]You[]Only[]Look[]CVPR[]2016[]paper.pdf[] 
  []
 
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 114.
 [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 104.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
  (./proposal.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 104.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 104.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 114.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 114.
 Package rerunfilecheck Info: File `proposal.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 104.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 114.
  ) 
 Here is how much of TeX's memory you used:
  5373 strings out of 480608
- 83354 string characters out of 5903630
- 348894 words of memory out of 5000000
- 21181 multiletter control sequences out of 15000+600000
- 534459 words of font info for 31 fonts, out of 8000000 for 9000
+ 83345 string characters out of 5903630
+ 348790 words of memory out of 5000000
+ 21182 multiletter control sequences out of 15000+600000
+ 534460 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,4n,29p,1010b,309s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,4n,29p,1290b,309s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
 /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on proposal.pdf (3 pages, 433147 bytes).
+Output written on proposal.pdf (3 pages, 438261 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
- 14 named destinations out of 1000 (max. 500000)
+ 58 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
+ 13 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
