@@ -1,0 +1,7 @@
+data/camouflage/000069.jpg
+data/camouflage/000139.jpg
+data/camouflage/000017.jpg
+data/camouflage/000138.jpg
+data/camouflage/000003.jpg
+data/camouflage/000036.jpg
+data/camouflage/000046.jpg
