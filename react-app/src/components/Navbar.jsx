@@ -24,7 +24,7 @@ const MyNavbar = () => {
 
         <Nav className="mr-auto">
         <Nav.Link href="#classification-demo">Classification Demo</Nav.Link>
-          <Nav.Link href="#coming-soon">Coming soon</Nav.Link>
+          {/* <Nav.Link href="#coming-soon">Coming soon</Nav.Link> */}
           <Nav.Link href="#source-code">Source Code</Nav.Link>
           <NavDropdown title="Presentation">
             <NavDropdown.Item href="#proposal">Proposal</NavDropdown.Item>
