@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import * as tf from '@tensorflow/tfjs';
 import {
     useRecoilState,
@@ -36,17 +36,27 @@ const ImageClassifier = () => {
     images = useRecoilValue(imagesAtom)
     const [predictions, setPredictions] = useRecoilState(predictionsAtom)
 
+    const [previousNumberOfImages, setPreviousNumberOfImages] = useState(0)
+
     const predict = async (images) => {
         console.log("predict")
-        console.log(images)
+        console.log(images.slice(previousNumberOfImages))
 
-        await Promise.all(images.map(async (image) => {
+        await Promise.all(images.slice(previousNumberOfImages).map(async (image) => {
             const img = await loadImageUrl(image)
             const tensorImg = tf.browser.fromPixels(img).resizeNearestNeighbor([224, 224]).toFloat().expandDims();
             const prediction = await model.predict(tensorImg).data();
             return prediction
         })).then((values) => {
-            setPredictions(values)
+            if (images.length == 0 || images.length < predictions.length) {
+                setPredictions(values)
+            }
+            else {
+                setPredictions([...predictions, ...values])
+            }
+
+            setPreviousNumberOfImages(images.length)
+
             console.log("Time: " + Date.now())
         })
     }

@@ -24,7 +24,7 @@ const DragBox = styled.div`
   white-space: pre-line;
 `
 
-const maxImageNumber = 8
+const maxImageNumber = 30
 
 const imagesAtom = atom({
   key: 'images',
@@ -60,6 +60,9 @@ const DropArea = () => {
       const fileContents = await handleFileChosen(file);
       setImages(images => {
         let length = images.length + 1
+        if (length > maxImageNumber) {
+          return images
+        }
         return [...images, fileContents].slice(Math.max(length - maxImageNumber, 0))
       });
       return fileContents;
@@ -77,6 +80,9 @@ const DropArea = () => {
 
         setImages(images => {
           let length = images.length + 1
+          if (length > maxImageNumber) {
+            return images
+          }
           return [...images, url].slice(Math.max(length - maxImageNumber, 0))
         });
         setErr("")
@@ -104,7 +110,7 @@ const DropArea = () => {
     console.log("files: ", files);
 
     /* If user is dragging online image from another window, directly process and return */
-    if (imageUrl !== null) {
+    if (imageUrl !== null && imageUrl.length !== 0) {
       loadImageUrl(imageUrl)
     }
 
@@ -142,6 +148,9 @@ const DropArea = () => {
     }
     setFilenames(filenames => {
       let length = filenames.length + newFilenames.length
+      if (length > maxImageNumber) {
+        return filenames
+      }
       return [...filenames, ...newFilenames].slice(Math.max(length - maxImageNumber, 0))
     });
   };
